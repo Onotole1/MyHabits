@@ -1,0 +1,94 @@
+{
+  "sourceLanguage" : "ru",
+  "strings" : {
+    "info_screen_header" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Привычка за 21 день"
+          }
+        }
+      }
+    },
+    "info_screen_paragraph_1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прохождение этапов, за которые за 21 день вырабатывается привычка, подчиняется следующему алгоритму:"
+          }
+        }
+      }
+    },
+    "info_screen_paragraph_2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Провести 1 день без обращения к старым привычкам, стараться вести себя так, как будто цель, загаданная в перспективу, находится на расстоянии шага."
+          }
+        }
+      }
+    },
+    "info_screen_paragraph_3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2. Выдержать 2 дня в прежнем состоянии самоконтроля."
+          }
+        }
+      }
+    },
+    "info_screen_paragraph_4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3. Отметить в дневнике первую неделю изменений и подвести первые итоги — что оказалось тяжело, что — легче, с чем еще предстоит серьезно бороться."
+          }
+        }
+      }
+    },
+    "info_screen_paragraph_5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4. Поздравить себя с прохождением первого серьезного порога в 21 день. \nЗа это время отказ от дурных наклонностей уже примет форму осознанного преодоления и человек сможет больше работать в сторону принятия положительных качеств."
+          }
+        }
+      }
+    },
+    "info_screen_paragraph_6" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5. Держать планку 40 дней. Практикующий методику уже чувствует себя освободившимся от прошлого негатива и двигается в нужном направлении с хорошей динамикой."
+          }
+        }
+      }
+    },
+    "info_screen_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Информация"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

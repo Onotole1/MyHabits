@@ -17,6 +17,8 @@ class HabitsViewController: UIViewController {
     }
 
     @objc func addButtonTapped() {
-        print("Кнопка '+' нажата")
+        let navController = UINavigationController(rootViewController: HabitViewController())
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated: true, completion: nil)
     }
 }

@@ -131,6 +131,5 @@ extension UILabel {
 
         self.attributedText = attributedString
         self.textColor = color ?? style.color
-        self.numberOfLines = 0
     }
 }

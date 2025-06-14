@@ -73,7 +73,6 @@ class HabitsViewController: UIViewController {
 
     private func setupNavigationBar() {
         title = NSLocalizedString("habits_screen_title", comment: "")
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped)
         )
@@ -92,6 +91,7 @@ class HabitsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
         refreshData()
         collectionView.reloadData()
     }
@@ -103,7 +103,12 @@ class HabitsViewController: UIViewController {
         habitItems = habitsStore.habits.enumerated().map { (index, habit) in
             HabitsViewModel.habit(HabitUIModel.from(
                 domainModel: habit,
-                rootClickListener: { print("Habit clicked") },
+                rootClickListener: { [weak self] in
+                    self?.navigationController?.pushViewController(
+                        HabitDetailsViewController(habit: habit),
+                        animated: true,
+                    )
+                },
                 checkBoxClickListener: { [weak self] in
                     self?.checkBoxClickListener(habit, index)
                 }

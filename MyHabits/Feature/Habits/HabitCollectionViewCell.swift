@@ -35,6 +35,8 @@ class HabitCollectionViewCell: UICollectionViewCell {
         CustomCheckbox()
     }()
 
+    private var rootClickListener: (() -> Void)?
+
     // MARK: - Lifecycle
 
     override init(frame: CGRect) {
@@ -43,6 +45,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         tuneView()
         addSubviews()
         setupConstraints()
+        setupListeners()
     }
 
     required init?(coder: NSCoder) {
@@ -55,6 +58,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         nameLabel.text = nil
         dateLabel.text = nil
         counterLabel.text = nil
+        rootClickListener = nil
         isAlreadyTakenTodayCheckbox.setChecked(false)
     }
 
@@ -72,9 +76,20 @@ class HabitCollectionViewCell: UICollectionViewCell {
             String(format: NSLocalizedString("habits_screen_item_count", comment: ""), viewModel.counter),
             with: .footNoteCell,
         )
+        rootClickListener = viewModel.rootClickListener
     }
 
     // MARK: - Private
+
+    private func setupListeners() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(rootTapped))
+        innerView.addGestureRecognizer(tapGesture)
+        innerView.isUserInteractionEnabled = true
+    }
+
+    @objc private func rootTapped() {
+        rootClickListener?()
+    }
 
     private func tuneView() {
         contentView.layer.cornerRadius = 8

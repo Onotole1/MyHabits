@@ -122,6 +122,50 @@
         }
       }
     },
+    "habits_screen_item_count" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Счётчик: %d"
+          }
+        }
+      }
+    },
+    "habits_screen_progress_complete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Успех 👍"
+          }
+        }
+      }
+    },
+    "habits_screen_progress_todo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всё получится!"
+          }
+        }
+      }
+    },
+    "habits_screen_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сегодня"
+          }
+        }
+      }
+    },
     "info_screen_header" : {
       "extractionState" : "manual",
       "localizations" : {

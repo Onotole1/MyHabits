@@ -75,7 +75,7 @@ struct DSTextStyle: Changeable, Hashable {
 
     static let caption: DSTextStyle = .init(
         color: .systemGray2,
-        textStyle: .caption1,
+        textStyle: .caption2,
         weight: .regular,
         uppercase: false,
     )
@@ -119,7 +119,7 @@ private class FontCache {
 }
 
 extension UILabel {
-    func setStyledText(_ text: String, with style: DSTextStyle) {
+    func setStyledText(_ text: String, with style: DSTextStyle, color: UIColor? = nil) {
         let font = FontCache.shared.font(for: style)
 
         let uppercasedText = style.uppercase ? text.uppercased() : text
@@ -130,7 +130,7 @@ extension UILabel {
         )
 
         self.attributedText = attributedString
-        self.textColor = style.color
+        self.textColor = color ?? style.color
         self.numberOfLines = 0
     }
 }

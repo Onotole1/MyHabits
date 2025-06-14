@@ -286,39 +286,6 @@
           }
         }
       }
-    },
-    "today" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сегодня"
-          }
-        }
-      }
-    },
-    "two_days_ago" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Позавчера"
-          }
-        }
-      }
-    },
-    "yesterday" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вчера"
-          }
-        }
-      }
     }
   },
   "version" : "1.0"

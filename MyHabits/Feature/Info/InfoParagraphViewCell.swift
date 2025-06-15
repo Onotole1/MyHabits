@@ -12,7 +12,11 @@ class InfoParagraphViewCell: UITableViewCell {
     // MARK: - Subviews
 
     private lazy var paragraphLabel: UILabel = {
-        UILabel()
+        let label = UILabel()
+
+        label.numberOfLines = 0
+
+        return label
     }()
 
     // MARK: - Lifecycle

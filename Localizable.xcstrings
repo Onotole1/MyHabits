@@ -1,6 +1,28 @@
 {
   "sourceLanguage" : "ru",
   "strings" : {
+    "cancel_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
+          }
+        }
+      }
+    },
+    "create_habit_delete_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить привычку"
+          }
+        }
+      }
+    },
     "create_habit_screen_cancel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -30,6 +52,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Цвет заметки"
+          }
+        }
+      }
+    },
+    "create_habit_screen_edit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Править"
           }
         }
       }
@@ -118,6 +151,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Создать"
+          }
+        }
+      }
+    },
+    "delete_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить"
+          }
+        }
+      }
+    },
+    "delete_habit_text" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы хотите удалить привычку «%@»?"
+          }
+        }
+      }
+    },
+    "delete_habit_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить привычку"
           }
         }
       }

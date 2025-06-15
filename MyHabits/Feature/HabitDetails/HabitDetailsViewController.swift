@@ -12,7 +12,7 @@ class HabitDetailsViewController: UIViewController {
     // MARK: - Data
 
     private var data: [HabitDetailsViewModel] = []
-    private var habit: Habit
+    private var habitWithIndex: HabitWithIndex
 
     // MARK: - Subviews
 
@@ -25,9 +25,9 @@ class HabitDetailsViewController: UIViewController {
 
     // MARK: - Lifecycle
 
-    init(habit: Habit) {
-        self.habit = habit
-        data = HabitDetailsViewModel.make(habit: habit)
+    init(habitWithIndex: HabitWithIndex) {
+        self.habitWithIndex = habitWithIndex
+        data = HabitDetailsViewModel.make(habit: habitWithIndex.habit)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -59,7 +59,7 @@ class HabitDetailsViewController: UIViewController {
     // MARK: - Private
 
     private func setupNavigationController() {
-        title = habit.name
+        title = habitWithIndex.habit.name
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: NSLocalizedString("edit_button", comment: ""),
@@ -70,7 +70,11 @@ class HabitDetailsViewController: UIViewController {
     }
 
     @objc private func editButtonTapped() {
-        print("Edit button tapped")
+        let habitViewController = HabitViewController(habitWithIndex: habitWithIndex)
+        let navController = UINavigationController(rootViewController: habitViewController)
+        habitViewController.delegate = self
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated: true, completion: nil)
     }
 }
 
@@ -94,5 +98,18 @@ extension HabitDetailsViewController: UITableViewDataSource {
 extension HabitDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         NSLocalizedString("habit_details_section", comment: "")
+    }
+}
+
+// MARK: - HabitDetailsViewControllerDelegate
+
+extension HabitDetailsViewController: HabitViewControllerDelegate {
+    func didDeleteHabit() {
+        navigationController?.popViewController(animated: true)
+    }
+
+    func didUpdateHabit(habit: Habit) {
+        title = habit.name
+        habitWithIndex = HabitWithIndex(habit: habit, index: habitWithIndex.index)
     }
 }

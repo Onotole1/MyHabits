@@ -15,6 +15,7 @@ class InfoHeaderViewCell: UITableViewCell {
         let label = UILabel()
 
         label.setStyledText(NSLocalizedString("info_screen_header", comment: ""), with: .title3)
+        label.numberOfLines = 0
 
         return label
     }()

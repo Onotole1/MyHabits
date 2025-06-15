@@ -105,7 +105,7 @@ class HabitsViewController: UIViewController {
                 domainModel: habit,
                 rootClickListener: { [weak self] in
                     self?.navigationController?.pushViewController(
-                        HabitDetailsViewController(habit: habit),
+                        HabitDetailsViewController(habitWithIndex: HabitWithIndex(habit: habit, index: index)),
                         animated: true,
                     )
                 },

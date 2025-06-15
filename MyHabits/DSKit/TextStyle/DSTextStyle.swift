@@ -133,3 +133,38 @@ extension UILabel {
         self.textColor = color ?? style.color
     }
 }
+
+extension UITextField {
+    func setDSTextStyle(_ style: DSTextStyle, color: UIColor? = nil) {
+        let font = FontCache.shared.font(for: style)
+
+        self.font = font
+        self.textColor = color ?? style.color
+    }
+
+    func setStyledPlaceholder(_ text: String, with style: DSTextStyle, color: UIColor? = nil) {
+        let font = FontCache.shared.font(for: style)
+
+        let uppercasedText = style.uppercase ? text.uppercased() : text
+
+        attributedPlaceholder = NSAttributedString(
+            string: uppercasedText,
+            attributes: [.font: font]
+        )
+    }
+}
+
+extension UIButton {
+    func setStyledTitle(_ text: String, with style: DSTextStyle, color: UIColor? = nil) {
+        let font = FontCache.shared.font(for: style)
+
+        let uppercasedText = style.uppercase ? text.uppercased() : text
+
+        let attributedString = NSAttributedString(
+            string: uppercasedText,
+            attributes: [.font: font, .foregroundColor: color ?? style.color]
+        )
+
+        self.setAttributedTitle(attributedString, for: .normal)
+    }
+}

@@ -86,4 +86,27 @@ struct HabitViewBuilder {
 
         return button
     }
+
+    static func createColorPicker(
+        selectedColor: UIColor,
+        sourceView: UIView,
+        colorPickerDelegate: UIColorPickerViewControllerDelegate?,
+        popoverDelegate: UIPopoverPresentationControllerDelegate?,
+    ) -> UIColorPickerViewController {
+        let colorPicker = UIColorPickerViewController()
+        colorPicker.title = NSLocalizedString("create_habit_screen_color_picker_title", comment: "")
+        colorPicker.supportsAlpha = false
+        colorPicker.delegate = colorPickerDelegate
+        colorPicker.selectedColor = selectedColor
+        colorPicker.modalPresentationStyle = .popover
+
+        if let popoverController = colorPicker.popoverPresentationController {
+            popoverController.sourceView = sourceView
+            popoverController.sourceRect = sourceView.bounds
+            popoverController.permittedArrowDirections = [.up, .down]
+            popoverController.delegate = popoverDelegate
+        }
+
+        return colorPicker
+    }
 }

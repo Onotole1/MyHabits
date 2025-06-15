@@ -266,13 +266,15 @@ class HabitViewController: UIViewController {
     }
 
     @objc private func chooseColor() {
-        let colorPicker = UIColorPickerViewController()
-        colorPicker.title = NSLocalizedString("create_habit_screen_color_picker_title", comment: "")
-        colorPicker.supportsAlpha = false
-        colorPicker.delegate = self
-        colorPicker.selectedColor = selectedColor
-        colorPicker.modalPresentationStyle = .popover
-        self.present(colorPicker, animated: true)
+        self.present(
+            HabitViewBuilder.createColorPicker(
+                selectedColor: selectedColor,
+                sourceView: habitColorView,
+                colorPickerDelegate: self,
+                popoverDelegate: self,
+            ),
+            animated: true,
+        )
     }
 
     // MARK: - Private
@@ -322,8 +324,21 @@ class HabitViewController: UIViewController {
 // MARK: - UIColorPickerViewControllerDelegate
 
 extension HabitViewController: UIColorPickerViewControllerDelegate {
-    public func colorPickerViewControllerDidFinish(_ colorPicker: UIColorPickerViewController) {
-        selectedColor = colorPicker.selectedColor
-        habitColorView.backgroundColor = selectedColor
+
+    public func colorPickerViewController(
+        _ viewController: UIColorPickerViewController,
+        didSelect color: UIColor,
+        continuously: Bool,
+    ) {
+        selectedColor = color
+        habitColorView.backgroundColor = color
+    }
+}
+
+// MARK: - UIPopoverPresentationControllerDelegate
+
+extension HabitViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
 }
